@@ -1,0 +1,123 @@
+/* WarpMesaGL samples readme.txt */
+
+How to build WarpMesaGL samples ?
+--------------------------------------------------------
+1. unzip examples
+2. ren \TOOLKIT\H\gl \TOOLKIT\H\gl_old
+3. run \Samples\makeAll.cmd
+4. in case of problems look run single \Samples\makeOne.cmd SampleDirName
+
+How to convert any OpenGL samples to WarpMesaGL samples ?
+--------------------------------------------
+Example: source file -  MesaCVS\samples\line.c
+
+build Warp OpenGL sample:
+(a)  copy line.c and tkmap.c to selected directory,
+     copy MAIN.C and basis.h from \Samples\OGL_SAMPLES
+to the same directory:
+
+Directory of G:\MESA\OS2_port\Samples\LINE
+
+27.02.00  14:12      <DIR>             0  .
+27.02.00  14:12      <DIR>             0  ..
+13.02.00   2:33        391             0  basis.h
+19.08.99   3:55       4266             0  line.c
+13.02.00   2:32       1473             0  MAIN.C
+19.08.99   3:55       1212             0  tkmap.c
+27.02.00  16:43         77             0  makeitOGL.cmd
+27.02.00  16:13         30             0  runit32.cmd
+
+(b)
+  change in line.c name of main to mainint:
+
+//int main(int argc, char **argv)
+int maininit(int argc, char** argv)
+(b1)
+change includes
+#include <GL/gl.h>
+#include <GL/glu.h>
+to
+#include "basis.h"
+
+(b2) delete, if there is
+#include "aux.h"
+and change all aux* functions to its glut analogs
+
+(c1)  to compile with from command line (makeitOGL.cmd): 
+icc -Ss -Ms line.c MAIN.C   -B" /st:1000000 /nop OPENGL.lib GLUT.lib" 
+
+(c2) 
+  to compile from VAC++ 3 WorkFrame rename tkmap.c to tkmap.h. and change
+in line.c  #include "tkmap.c" to  #include "tkmap.c"
+Deselect "Use Optlink linkage" in compiler options, set stack size to 
+1000000 and add OPENGL.lib GLUT.lib libraries
+
+(c3) To run line.exe at some videodrivers & videmodes with 32bits per pixel
+make runit32.cmd:
+
+SET OGL_BIT_COUNT=32
+line.exe
+=====================================
+
+build WarpMesaGL sample:
+(a1) copy line.c and tkmap.c to selected directory,
+(a2) copy MAIN.C,basis.h,GL_TEST.H,GL_TEST.RC,MesaGL.ico from \Samples 
+     (not from \Samples\OGL_SAMPLES !) to the same directory;
+(a3) copy MesaGL2.LIB and MesaGLUT.LIB to the same directory, or somewhere
+     at LIB  enviroment path 
+(a4) copy MESA\OS2_port\GL directory to MESA\OS2_port\Samples\LINE or
+     adjust path to GL in basis.h
+(a5) copy MesaGL2.DLL, MesaGLUT.dll to the same directory if you 
+     have "." in your LIBPATH, or copy somewhere at LIBPATH
+  
+You will have something like that:
+
+Directory of G:\EVGEN\MESA\OS2_port\Samples\LINE
+
+19.01.00  11:57      <DIR>             0  gl
+27.02.00  16:51       4302             0  line.c
+27.02.00  17:00       1407             0  MAIN.C
+19.08.99   3:55       1212             0  tkmap.c
+27.02.00  16:22        385             0  basis.h
+23.01.00  17:41       6375             0  GL_TEST.H
+23.01.00  17:42       1011           176  GL_TEST.RC
+16.02.99  14:24       3428             0  MesaGL.ico
+28.02.00  10:56      34816             0  MesaGL2.LIB
+28.02.00  10:58       3584             0  MesaGLUT.LIB
+28.02.00  10:56    1023606            61  MesaGL2.DLL
+28.02.00  10:58      62464            61  MesaGLUT.dll
+17.06.97   1:18      63564             0  DIVE.DLL
+27.02.00  16:13         30             0  runit.cmd
+27.02.00  16:43         77             0  makeit.cmd
+27.02.00  16:43         99             0  makeitMesa.cmd
+
+
+
+(b)  change in line.c name of main to mainint:
+
+//int main(int argc, char **argv)
+int maininit(int argc, char** argv)
+
+(b1)
+change includes
+#include <GL/gl.h>
+#include <GL/glu.h>
+to
+#include "basis.h"
+
+(b2) delete, if there is
+#include "aux.h"
+and change all aux* functions to its glut analogs
+
+(c1)  to compile with from command line  (makeitMesa.cmd): 
+
+icc -Ss line.c MAIN.C   -B" /st:1000000 /nop MesaGL2.LIB MesaGLUT.LIB"
+rc GL_TEST.RC  line.exe
+
+
+(c2) 
+  to compile from VAC++ 3 WorkFrame rename tkmap.c to tkmap.h. and change
+in line.c  #include "tkmap.c" to  #include "tkmap.c"
+Set stack size to 200000, application type as "Window" and 
+add MesaGL2.LIB MesaGLUT.LIB libraries
+
