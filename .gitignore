@@ -27,3 +27,7 @@
 *.exe
 *.out
 *.app
+
+# Logs etc
+*.log
+*.orig
