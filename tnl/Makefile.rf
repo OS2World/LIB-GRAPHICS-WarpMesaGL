@@ -1,0 +1,23 @@
++t_array_api.obj &
++t_array_import.obj &
++t_context.obj &
++t_eval_api.obj &
++t_imm_alloc.obj &
++t_imm_api.obj &
++t_imm_debug.obj &
++t_imm_dlist.obj &
++t_imm_elt.obj &
++t_imm_eval.obj &
++t_imm_exec.obj &
++t_imm_fixup.obj &
++t_pipeline.obj &
++t_vb_fog.obj &
++t_vb_light.obj &
++t_vb_normals.obj &
++t_vb_points.obj &
++t_vb_program.obj &
++t_vb_render.obj &
++t_vb_texgen.obj &
++t_vb_texmat.obj &
++t_vb_vertex.obj
+

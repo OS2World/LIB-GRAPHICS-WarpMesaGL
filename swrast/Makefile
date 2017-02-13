@@ -1,0 +1,866 @@
+# Makefile
+# Created by IBM WorkFrame/2 MakeMake at 13:24:49 on 13 Dec 2002
+#
+# The actions included in this make file are:
+#  Compile::C++ Compiler
+#  Lib::Library Tool
+
+.SUFFIXES:
+
+.SUFFIXES: \
+    .cpp .obj 
+
+.cpp.obj:
+    @echo " Compile::C++ Compiler "
+    icc.exe /I..\ /I..\X86 /I..\GL /Ss /Wcmpcndcnscnvcpydclenuextgengnrgotinilanobsordparporprorearettrdtruunduniuse /Tx /Ti /Gm /G5 /Gf /Gi /Oi /C %s
+
+{G:\EVGEN\MESA5\swrast}.cpp.obj:
+    @echo " Compile::C++ Compiler "
+    icc.exe /I..\ /I..\X86 /I..\GL /Ss /Wcmpcndcnscnvcpydclenuextgengnrgotinilanobsordparporprorearettrdtruunduniuse /Tx /Ti /Gm /G5 /Gf /Gi /Oi /C %s
+
+all: \
+    .\SwRast.lib
+
+.\SwRast.lib: \
+    .\s_triangle.obj \
+    .\s_texture.obj \
+    .\s_zoom.obj \
+    .\s_aaline.obj \
+    .\s_aatriangle.obj \
+    .\s_aatriangle_1.obj \
+    .\s_accum.obj \
+    .\s_alpha.obj \
+    .\s_alphabuf.obj \
+    .\s_bitmap.obj \
+    .\s_blend.obj \
+    .\s_buffers.obj \
+    .\s_context.obj \
+    .\s_copypix.obj \
+    .\s_depth.obj \
+    .\s_drawpix.obj \
+    .\s_feedback.obj \
+    .\s_fog.obj \
+    .\s_histogram.obj \
+    .\s_imaging.obj \
+    .\s_lines.obj \
+    .\s_logic.obj \
+    .\s_masking.obj \
+    .\s_pixeltex.obj \
+    .\s_points.obj \
+    .\s_readpix.obj \
+    .\s_span.obj \
+    .\s_stencil.obj \
+    .\s_texstore.obj
+    @echo " Lib::Library Tool "
+    ilib.exe  /nol /noi SwRast.lib @Makefile.rf;
+
+.\s_triangle.obj: \
+    ..\swrast\s_triangle.cpp \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glheader.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}macros.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}imports.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}colormac.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_span.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}conf.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/gl.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/glext.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}config.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mmath.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mtypes.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}swrast.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}gl_mangle.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/os2_x11.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapitable.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glthread.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}math/m_matrix.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Trace/tr_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}dd.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Xthreads.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_aatriangle.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapi.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_depth.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_triangle.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_feedback.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}texstate.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}texformat.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}teximage.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_tritemp.h
+
+.\s_texture.obj: \
+    ..\swrast\s_texture.cpp \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glheader.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}macros.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}imports.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}colormac.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}conf.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/gl.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/glext.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}config.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mmath.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mtypes.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}swrast.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}gl_mangle.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/os2_x11.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapitable.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glthread.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}math/m_matrix.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Trace/tr_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}dd.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Xthreads.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapi.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_texture.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}texformat.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}teximage.h
+
+.\s_texstore.obj: \
+    ..\swrast\s_texstore.cpp \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glheader.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}macros.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}imports.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}colormac.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_span.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}conf.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/gl.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/glext.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}config.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mmath.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mtypes.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}swrast.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}gl_mangle.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/os2_x11.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapitable.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glthread.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}math/m_matrix.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Trace/tr_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}dd.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Xthreads.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapi.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}image.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_depth.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}convolve.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}texformat.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}teximage.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}texstore.h
+
+.\s_stencil.obj: \
+    ..\swrast\s_stencil.cpp \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glheader.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}macros.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}imports.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_stencil.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}conf.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/gl.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/glext.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}config.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mtypes.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}swrast.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}gl_mangle.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/os2_x11.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapitable.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glthread.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}math/m_matrix.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Trace/tr_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}dd.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Xthreads.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapi.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_depth.h
+
+.\s_span.obj: \
+    ..\swrast\s_span.cpp \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glheader.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}macros.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}imports.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}colormac.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_span.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_stencil.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}conf.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/gl.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/glext.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}config.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mmath.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mtypes.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}swrast.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}gl_mangle.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/os2_x11.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapitable.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glthread.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}math/m_matrix.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Trace/tr_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}dd.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Xthreads.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_alphabuf.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_masking.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapi.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_alpha.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_blend.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_depth.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_texture.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_fog.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_logic.h
+
+.\s_readpix.obj: \
+    ..\swrast\s_readpix.cpp \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glheader.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}macros.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}imports.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}colormac.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_span.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_stencil.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}conf.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/gl.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/glext.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}config.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mmath.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mtypes.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}swrast.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}gl_mangle.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/os2_x11.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapitable.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glthread.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}math/m_matrix.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Trace/tr_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}dd.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Xthreads.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_alphabuf.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapi.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}image.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}pixel.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_depth.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}convolve.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}feedback.h
+
+.\s_points.obj: \
+    ..\swrast\s_points.cpp \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glheader.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}macros.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}imports.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}colormac.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_span.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}conf.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/gl.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/glext.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}config.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mmath.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mtypes.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}swrast.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}gl_mangle.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/os2_x11.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapitable.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glthread.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}math/m_matrix.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Trace/tr_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}dd.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Xthreads.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapi.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_points.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_feedback.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}texstate.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_pointtemp.h
+
+.\s_pixeltex.obj: \
+    ..\swrast\s_pixeltex.cpp \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glheader.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}macros.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}imports.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}colormac.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}conf.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/gl.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/glext.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}config.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mmath.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mtypes.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}swrast.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}gl_mangle.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/os2_x11.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapitable.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glthread.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}math/m_matrix.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Trace/tr_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}dd.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Xthreads.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_texture.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_pixeltex.h
+
+.\s_masking.obj: \
+    ..\swrast\s_masking.cpp \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glheader.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}macros.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_span.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}conf.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/gl.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/glext.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}config.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mtypes.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}swrast.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}gl_mangle.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/os2_x11.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapitable.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glthread.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}math/m_matrix.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Trace/tr_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}dd.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Xthreads.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_alphabuf.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_masking.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}enums.h
+
+.\s_logic.obj: \
+    ..\swrast\s_logic.cpp \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glheader.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}macros.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}imports.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_span.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}conf.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/gl.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/glext.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}config.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mtypes.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}swrast.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}gl_mangle.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/os2_x11.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapitable.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glthread.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}math/m_matrix.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Trace/tr_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}dd.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Xthreads.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_alphabuf.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapi.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_logic.h
+
+.\s_lines.obj: \
+    ..\swrast\s_lines.cpp \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glheader.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}macros.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}imports.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}colormac.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_span.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}conf.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/gl.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/glext.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}config.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mmath.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mtypes.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}swrast.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}gl_mangle.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/os2_x11.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapitable.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glthread.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}math/m_matrix.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Trace/tr_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}dd.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Xthreads.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}swrast/s_aaline.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_depth.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_lines.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_feedback.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_linetemp.h
+
+.\s_imaging.obj: \
+    ..\swrast\s_imaging.cpp \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glheader.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_span.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}conf.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/gl.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/glext.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}config.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mtypes.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}swrast.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}gl_mangle.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/os2_x11.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapitable.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glthread.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}math/m_matrix.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Trace/tr_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}dd.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Xthreads.h
+
+.\s_histogram.obj: \
+    ..\swrast\s_histogram.cpp \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glheader.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}macros.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}imports.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}colormac.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_span.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}conf.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/gl.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/glext.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}config.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mmath.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mtypes.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}swrast.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}gl_mangle.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/os2_x11.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapitable.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glthread.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}math/m_matrix.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Trace/tr_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}dd.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Xthreads.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}image.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_histogram.h
+
+.\s_fog.obj: \
+    ..\swrast\s_fog.cpp \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glheader.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}macros.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}imports.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}colormac.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_span.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}conf.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/gl.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/glext.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}config.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mmath.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mtypes.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}swrast.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}gl_mangle.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/os2_x11.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapitable.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glthread.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}math/m_matrix.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Trace/tr_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}dd.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Xthreads.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapi.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_fog.h
+
+.\s_feedback.obj: \
+    ..\swrast\s_feedback.cpp \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glheader.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}macros.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}imports.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}colormac.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}conf.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/gl.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/glext.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}config.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mmath.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mtypes.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}swrast.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}gl_mangle.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/os2_x11.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapitable.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glthread.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}math/m_matrix.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Trace/tr_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}dd.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Xthreads.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapi.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_triangle.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}feedback.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}enums.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_feedback.h
+
+.\s_drawpix.obj: \
+    ..\swrast\s_drawpix.cpp \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glheader.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}macros.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}imports.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}colormac.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_span.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_stencil.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_zoom.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}conf.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/gl.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/glext.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}config.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mmath.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mtypes.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}swrast.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}gl_mangle.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/os2_x11.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapitable.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glthread.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}math/m_matrix.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Trace/tr_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}dd.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Xthreads.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapi.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}image.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}pixel.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_texture.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}convolve.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_pixeltex.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_drawpix.h
+
+.\s_depth.obj: \
+    ..\swrast\s_depth.cpp \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glheader.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}macros.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}imports.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}conf.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/gl.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/glext.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}config.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mtypes.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}swrast.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}gl_mangle.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/os2_x11.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapitable.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glthread.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}math/m_matrix.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Trace/tr_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}dd.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Xthreads.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapi.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_depth.h
+
+.\s_copypix.obj: \
+    ..\swrast\s_copypix.cpp \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glheader.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}macros.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}imports.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}colormac.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_span.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_stencil.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_zoom.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}conf.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/gl.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/glext.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}config.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mmath.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mtypes.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}swrast.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}gl_mangle.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/os2_x11.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapitable.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glthread.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}math/m_matrix.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Trace/tr_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}dd.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Xthreads.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapi.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}pixel.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_depth.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_texture.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}convolve.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}feedback.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_histogram.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_pixeltex.h
+
+.\s_context.obj: \
+    ..\swrast\s_context.cpp \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glheader.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}imports.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_span.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}conf.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/gl.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/glext.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}config.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mtypes.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}swrast.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}gl_mangle.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/os2_x11.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapitable.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glthread.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}math/m_matrix.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Trace/tr_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}dd.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Xthreads.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapi.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_blend.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_lines.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_points.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_triangle.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_texture.h
+
+.\s_buffers.obj: \
+    ..\swrast\s_buffers.cpp \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glheader.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}macros.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}imports.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}colormac.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_stencil.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}conf.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/gl.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/glext.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}config.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mmath.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mtypes.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}swrast.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}gl_mangle.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/os2_x11.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapitable.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glthread.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}math/m_matrix.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Trace/tr_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}dd.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Xthreads.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_accum.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_alphabuf.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_masking.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_depth.h
+
+.\s_blend.obj: \
+    ..\swrast\s_blend.cpp \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glheader.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}macros.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}imports.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}colormac.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_span.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}conf.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/gl.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/glext.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}config.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mmath.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mtypes.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}swrast.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}gl_mangle.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/os2_x11.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapitable.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glthread.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}math/m_matrix.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Trace/tr_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}dd.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Xthreads.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_alphabuf.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapi.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_blend.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}X86/mmx.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}X86/common_x86_asm.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}common_x86_features.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}x86.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}3dnow.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}sse.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}math/m_xform.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}math/m_vector.h
+
+.\s_bitmap.obj: \
+    ..\swrast\s_bitmap.cpp \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glheader.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}macros.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}imports.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_span.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}conf.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/gl.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/glext.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}config.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mmath.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mtypes.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}swrast.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}gl_mangle.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/os2_x11.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapitable.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glthread.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}math/m_matrix.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Trace/tr_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}dd.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Xthreads.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}image.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}pixel.h
+
+.\s_alphabuf.obj: \
+    ..\swrast\s_alphabuf.cpp \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glheader.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}macros.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}imports.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}colormac.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}conf.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/gl.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/glext.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}config.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mmath.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mtypes.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}swrast.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}gl_mangle.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/os2_x11.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapitable.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glthread.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}math/m_matrix.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Trace/tr_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}dd.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Xthreads.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_alphabuf.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapi.h
+
+.\s_alpha.obj: \
+    ..\swrast\s_alpha.cpp \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glheader.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}macros.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}imports.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}colormac.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}conf.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/gl.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/glext.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}config.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mmath.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mtypes.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}swrast.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}gl_mangle.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/os2_x11.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapitable.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glthread.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}math/m_matrix.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Trace/tr_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}dd.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Xthreads.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapi.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_alpha.h
+
+.\s_accum.obj: \
+    ..\swrast\s_accum.cpp \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glheader.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}macros.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}imports.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_span.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}conf.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/gl.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/glext.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}config.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mmath.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mtypes.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}swrast.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}gl_mangle.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/os2_x11.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapitable.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glthread.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}math/m_matrix.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Trace/tr_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}dd.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Xthreads.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_accum.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_alphabuf.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_masking.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapi.h
+
+.\s_aatriangle_1.obj: \
+    ..\swrast\s_aatriangle_1.cpp \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glheader.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}macros.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}imports.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_span.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}conf.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/gl.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/glext.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}config.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mmath.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mtypes.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}swrast.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}gl_mangle.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/os2_x11.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapitable.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glthread.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}math/m_matrix.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Trace/tr_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}dd.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Xthreads.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_aatriangle.h
+
+.\s_aatriangle.obj: \
+    ..\swrast\s_aatriangle.cpp \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glheader.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}macros.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}imports.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_span.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}conf.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/gl.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/glext.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}config.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mmath.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mtypes.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}swrast.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}gl_mangle.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/os2_x11.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapitable.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glthread.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}math/m_matrix.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Trace/tr_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}dd.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Xthreads.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_aatriangle.h
+
+.\s_aaline.obj: \
+    ..\swrast\s_aaline.cpp \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glheader.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}imports.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_span.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}conf.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/gl.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/glext.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}config.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mmath.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mtypes.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}swrast.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}gl_mangle.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/os2_x11.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapitable.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glthread.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}math/m_matrix.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Trace/tr_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}dd.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Xthreads.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}swrast/s_aaline.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_aalinetemp.h
+
+.\s_zoom.obj: \
+    ..\swrast\s_zoom.cpp \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glheader.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}macros.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}imports.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}colormac.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_span.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_stencil.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}s_zoom.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}conf.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/gl.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/glext.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}config.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mmath.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}mtypes.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}swrast.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}gl_mangle.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}GL/os2_x11.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glapitable.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}glthread.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}math/m_matrix.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Trace/tr_context.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}dd.h \
+    {..\swrast;..\;..\X86;..\GL;$(INCLUDE);}Xthreads.h
